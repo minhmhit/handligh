@@ -1,0 +1,229 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.top-buttons .btn {
+    background-color: #c0392b;
+    color: #fff;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+.icon-section i {
+    font-size: 24px;
+    color: #333;
+}
+
+
+
+
+.marquee{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.discount-card {
+    border: 2px solid #d93025;
+    border-radius: 5px;
+    text-align: center;
+    color: #d93025;
+    font-weight: bold;
+    width: 300px;
+}
+.discount-header {
+    background-color: #d93025;
+    color: white;
+    padding: 10px;
+}
+.discount-header span {
+    font-size: 20px;
+}
+.code-title {
+    color: #fbbd05;
+    font-size: 18px;
+    margin: 10px 0;
+}
+.copy-btn {
+    background-color: #fbbd05;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.product-wrapper{
+    padding: 20px;
+    width: 100%;
+    height: 55vh;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s ease;
+}
+.product-thumbnail{
+    width: 100%;
+    height: 80%;
+
+}
+.product-wrapper:hover{
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.img{
+    position: relative;
+}
+.img img{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 15px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.product-info{
+    width: 100%;
+    height: 20%;
+}
+.product-thumbnail:hover > .row > .quickacess {
+    display: block;
+
+
+}
+.quickacess{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    display:none;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.viewall, .quickview{
+    background-color: #ccc;
+    color: #D93025;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.quickview:hover , .viewall:hover{
+    background-color: #ff0000;
+    color: #ffffff;
+
+}
+
+
+.white {
+    background-color: white;
+    border: 1px solid #ccc;
+}
+
+.black {
+    background-color: black;
+}
+.cartbtn{
+    color: #d93025;
+    padding: 10px;
+}
+.cartbtn:hover {
+    background-color: #ccc;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.policy-item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-item i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.policy-item h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.policy-item p {
+    font-size: 14px;
+}
+
+
+.policy-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.policy-item:hover i {
+    transform: scale(1.2);
+}
+
+
+.policy-item i, .policy-item h4, .policy-item p {
+    display: block;
+    margin: 0 auto;
+}
+.service{
+    height: 20vh;
+    width: 100%;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    color: #333;
+}
+.footer h6 {
+    color: #c0392b;
+    font-weight: bold;
+}
+.footer a {
+    color: #333;
+    text-decoration: none;
+}
+.footer a:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+.social-icons i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #c0392b;
+}
+.social-icons i:hover {
+    color: #555;
+}
+.newsletter input[type="email"] {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+.newsletter button {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.newsletter button i {
+    margin-right: 5px;
+}
+.bottom-text {
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+}

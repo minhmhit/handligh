@@ -14,102 +14,72 @@
 
 <!--    start header-->
 
-    <div class="row login">
-        <div class="col col-md-6">
 
-        </div>
-        <div class="col col-md-6">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
 
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-    </div>
-<hr>
-    <div class="row brand">
-        <div class="col col-md-4">
+      <div class="row navigation ">
+        <div class="col col-md-3">
             <nav class="navbar bg-body-tertiary">
                 <div class="container-fluid">
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm túi xách..." aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
                     </form>
                 </div>
             </nav>
         </div>
-        <div class="col col-md-4 logo">
-
-        </div>
-        <div class="col col-md-4">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="col col-md-6 ">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary ">
                 <div class="container-fluid">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
+                    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+                        <ul class="navbar-nav mx-auto  ">
                             <li class="nav-item">
-                                <div class="position-relative mx-4 text-center">
-                                    <i class="fas fa-heart"></i>
-                                    <span class="badge rounded-pill">0</span>
-                                    <p>Yêu thích</p>
-                                </div>
+                                <a class="nav-link me-5 home active " aria-current="page" href="#">Trang Chủ</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link me-5 " href="#">Giới Thiệu</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link  me-5 " href="#">
+                                    Sản Phẩm
+                                </a>
+
                             </li>
                             <li class="nav-item">
-                                <div class="position-relative mx-4 text-center">
-                                    <i class="fas fa-shopping-bag"></i>
-                                    <span class="badge rounded-pill">0</span>
-                                    <p>Giỏ hàng</p>
-                                </div>
+                                <a class="nav-link  me-5" href="#">Giỏ hàng <i class="fa fa-cart-shopping"></i></a>
+
                             </li>
-                            <li class="nav-item top-buttons d-flex justify-content-center">
-                                <button type="button" class="btn">
-                                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
-                                </button>
+                            <li class="nav-item">
+                                <a class="nav-link " href="#">Liên Hệ</a>
                             </li>
-                            <li class="nav-item top-buttons d-flex justify-content-center">
-                                <button type="button" class="btn">
-                                    <i class="fas fa-user-plus"></i> Đăng ký
-                                </button>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
             </nav>
         </div>
-    </div>
+        <div class="col col-md-3">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid d-flex justify-content-end">
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
 
-    <div class="row navigation ">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container-fluid">
-                <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                    <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Trang Chủ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Giới Thiệu</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Sản Phẩm
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Liên Hệ</a>
-                        </li>
+                            <li class="nav-item  top-buttons  ">
+                                <button type="button" class="btn">
+                                    <i class="fas fa-sign-in-alt"></i> Đăng nhập
+                                </button>
+                            </li>
+                            <li class="nav-item top-buttons ">
+                                <button type="button" class="btn">
+                                    <i class="fas fa-user-plus"></i> Đăng ký
+                                </button>
+                            </li>
 
-                    </ul>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
+
     </div>
 <!--end header-->
 <!--start carousel-->
@@ -134,9 +104,13 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+<div class="marquee-container">
     <div class="marquee">
-        <marquee behavior="" direction="">Free ship nội thành && Ưu đãi hấp dẫn</marquee>
+        <span>Ưu đãi hấp dẫn</span>
+        <span>Đại tiệc sale</span>
+        <span>Freeship nội thành</span>
     </div>
+</div>
 <!--end carousel-->
 
 
@@ -236,7 +210,7 @@
 <!--product-->
 
 <!--product-->
-<div class="container">
+<div class="container" id="product">
 <!--product list-->
 <div class="row mt-5">
     <div class="row mt-3 productsList">
@@ -814,6 +788,8 @@
         </div>
     </footer>
 <!--footer-->
-
+<button id="scrollToTopBtn" class="btn btn-danger btn-outline-warning rounded-pill" style="position: fixed; bottom: 40px; right: 20px; display: none;">
+    <i class="fas fa-arrow-up"></i>
+</button>
 </body>
 </html>

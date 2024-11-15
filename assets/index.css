@@ -8,6 +8,7 @@ body{
     background-color:#FFFFFF;
     overflow-x: hidden;
 }
+/*header*/
 .top-buttons .btn {
     background-color: #c0392b;
     color: #fff;
@@ -32,12 +33,12 @@ body{
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-
-
 .nav-link:hover {
     color: #ffc107;
     transform: scale(1.1);
 }
+/*end header*/
+/* voucher and marquee*/
 .marquee-container {
     overflow: hidden;
     white-space: nowrap;
@@ -56,11 +57,11 @@ body{
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
 }
-
 .marquee span {
     margin-right: 20vw;
 }
 .discount-card {
+    margin-top: 50px;
     border: 2px solid #d93025;
     border-radius: 5px;
     text-align: center;
@@ -90,11 +91,23 @@ body{
     font-size: 14px;
     font-weight: bold;
 }
+/*end voucher*/
+
+
+/*product*/
+.product-header {
+    transition: color 0.1s ease;
+    font-weight: bold;
+}
+.product-header:hover {
+    color: #D93025;
+    cursor: pointer;
+}
 .product-wrapper{
     padding: 20px;
     margin-top: 20px;
     width: 100%;
-    height: 50vh;
+    height: 55vh;
     background-color: #f8f9fa;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -123,7 +136,7 @@ body{
 }
 .product-info{
     width: 100%;
-    height: 20%;
+    height: 5%;
 }
 .product-thumbnail:hover > .row > .quickacess {
     display: block;
@@ -169,13 +182,16 @@ body{
 .cartbtn{
     color: #d93025;
     padding: 10px;
+    margin-bottom: 30px;
 }
 .cartbtn:hover {
     background-color: #ccc;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/*end product*/
 
+/*start ft*/
 .policy-item {
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -268,6 +284,9 @@ body{
 .container-footer{
     margin: 0 80px;
 }
+/* end ft*/
+
+/*QUAN-SAN*/
 .navigation .btnLogin-popup{
     width: 130px;
     height: 50px;
@@ -400,7 +419,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center ;
-   /* overflow: hidden; */
+    overflow: hidden;
     border-bottom-left-radius: 20px;
     cursor: pointer;
     z-index: 1;
@@ -470,17 +489,6 @@ body{
 .remember-forgot a:hover{
     text-decoration: underline;
 }
-.btn{
-    width: 100%;
-    height: 45px;
-    background-color: #162938;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    cursor: pointer;
-    color: white;
-    font-weight: 500;
-}
 .login-register{
     font-size: 0.9em;
     color: #162938;
@@ -505,3 +513,6 @@ body{
 .authen{
     display: none;
 }
+
+/*!*QUAN-SAN code with no comment. I don't know :333*!*/
+/* end QUAN-SAN*/

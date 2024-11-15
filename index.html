@@ -13,76 +13,67 @@
 <body>
 
 <!--    start header-->
-
-
-
-      <div class="row navigation ">
-        <div class="col col-md-3">
-            <nav class="navbar bg-body-tertiary">
-                <div class="container-fluid">
-                    <form class="d-flex" role="search">
-                        <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm túi xách..." aria-label="Search">
-                        <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-            </nav>
-        </div>
-        <div class="col col-md-6 ">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary ">
-                <div class="container-fluid">
-                    <div class="collapse navbar-collapse " id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto  ">
-                            <li class="nav-item">
-                                <a class="nav-link me-5 home active " aria-current="page" href="#">Trang Chủ</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link me-5 " href="#">Giới Thiệu</a>
-                            </li>
-                            <li class="nav-item ">
-                                <a class="nav-link  me-5 " href="#">
-                                    Sản Phẩm
-                                </a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link  me-5" href="#">Giỏ hàng <i class="fa fa-cart-shopping"></i></a>
-
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link " href="#">Liên Hệ</a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-        <div class="col col-md-3">
-            <nav class="navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid d-flex justify-content-end">
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-
-                            <li class="nav-item top-buttons unauthen">
-                                <button class="btnLogin-popup">Đăng nhập</button>
-                            </li>
-                            <li class="nav-item top-buttons unauthen">
-                                <button class="btnRegister-popup">Đăng ký</button>
-                            </li>
-                            <li class="nav-item user-infor authen">
-                                
-                            </li>
-                            <li class="nav-item authen">
-                                <button class="btnLogout" onclick="logout()">Đăng xuất</button>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-        </div>
-
+<div class="row navigation">
+    <div class="col-md-3 col-12">
+        <nav class="navbar bg-body-tertiary">
+            <div class="container-fluid">
+                <form class="d-flex" role="search">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm túi xách..." aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </nav>
     </div>
+    <div class="col-md-6 col-12">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link me-5 home active" aria-current="page" href="#">Trang Chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-5" href="#GioiThieu">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-5" href="#Product">Sản Phẩm</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link me-5" href="#">Giỏ hàng <i class="fa fa-cart-shopping"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#LienHe">Liên Hệ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="col-md-3 col-12">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid d-flex justify-content-end">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item top-buttons unauthen">
+                            <button class="btnLogin-popup">Đăng nhập</button>
+                        </li>
+                        <li class="nav-item top-buttons unauthen">
+                            <button class="btnRegister-popup">Đăng ký</button>
+                        </li>
+                        <li class="nav-item user-infor authen"></li>
+                        <li class="nav-item authen">
+                            <button class="btnLogout" onclick="logout()">Đăng xuất</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+
 <!--end header-->
 <!--start carousel-->
 <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
@@ -115,17 +106,17 @@
 </div>
 <!--end carousel-->
 
-
-<div class="container">
 <!--voucher-->
+<div id="GioiThieu" class="container">
+
 <div class="row mt-4">
     <div class="row justify-content-center">
         <!-- Card 1 -->
         <div class="col col-md-3">
             <div class="discount-card">
-                <div class="code-title">DOLA10</div>
+                <div class="code-title">DOLA5</div>
                 <div class="discount-header">
-                    <span>Giảm 10.000₫</span><br>
+                    <span>Giảm 5%</span><br>
                     <small>Áp dụng cho đơn hàng từ 1 triệu trở lên</small>
                 </div>
                 <button class="copy-btn mt-3">Sao chép</button>
@@ -134,7 +125,7 @@
         <!-- Card 2 -->
         <div class="col col-md-3">
             <div class="discount-card">
-                <div class="code-title">FREESHIP</div>
+                <div class="code-title">DOLASHIP</div>
                 <div class="discount-header">
                     <span>Miễn ship</span><br>
                     <small>Áp dụng cho đơn hàng từ 1 triệu trở lên</small>
@@ -145,9 +136,9 @@
         <!-- Card 3 -->
         <div class="col col-md-3">
             <div class="discount-card">
-                <div class="code-title">DOLA20</div>
+                <div class="code-title">DOLA10</div>
                 <div class="discount-header">
-                    <span>Giảm 20k</span><br>
+                    <span>Giảm 10%</span><br>
                     <small>Áp dụng cho đơn hàng từ 2 triệu trở lên</small>
                 </div>
                 <button class="copy-btn mt-3">Sao chép</button>
@@ -156,9 +147,9 @@
         <!-- Card 4 -->
         <div class="col col-md-3">
             <div class="discount-card">
-                <div class="code-title">DOLA50</div>
+                <div class="code-title">DOLA20</div>
                 <div class="discount-header">
-                    <span>Giảm 50k</span><br>
+                    <span>Giảm 20%</span><br>
                     <small>Áp dụng cho đơn hàng từ 3 triệu trở lên</small>
                 </div>
                 <button class="copy-btn mt-3">Sao chép</button>
@@ -166,13 +157,14 @@
         </div>
     </div>
 </div>
-<!--voucher-->
+
 </div>
+<!--voucher-->
 <!--service-->
-    <div class="row mt-4">
+    <div class="row "style="margin-top: 100px;">
             <div class="row">
                 <div class="col-12">
-                    <h2 class="text-center">Chính sách tại Dola Style</h2>
+                    <h2 class="text-center" style="font-weight: bold;">Chính sách tại Handligh</h2>
                     <p class="text-center">Với cam kết mang đến sự hài lòng tuyệt đối cho khách hàng, Dola Style chú trọng vào chất lượng sản phẩm và dịch vụ tốt nhất. Chúng tôi cam kết chỉ bán các sản phẩm chất lượng tốt nhất đến quý khách.</p>
                 </div>
             </div>
@@ -212,176 +204,27 @@
 <!--product-->
 
 <!--product-->
-<div class="container" id="product">
+<div class="container" id="Product">
 <!--product list-->
-<div class="row mt-5">
+    <div class="row justify-content-center mt-5 ">
+        <div class="col-auto">
+            <h2 class="text-center product-header">Sản Phẩm Nổi Bật</h2>
+        </div>
+    </div>
+
+    <div class="row mt-5">
     <div class="row mt-3 productsList">
         <div class="row list">
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
-                    <div class="product-thumbnail ">
-                        <div class="row img ">
+                    <div class="product-thumbnail">
+                        <div class="row img">
                             <img src="./assets/img/productimg/p1/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h5>Túi da cá sấu</h5>
-                                    <div class="row">
-                                        <div class="col-md-10">
-                                            <p>
-                                                <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                            </p>
-                                        </div>
-                                        <div class="col-md-2">
-                                            <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-md-3 col-sm-6 list-items">
-                <div class="product-wrapper d-flex flex-column">
-                    <div class="product-thumbnail">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p2/1_result.png" class="img-fluid" alt="">
-                            <div class="row quickacess">
-                                <div class="col-12">
-                                    <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="col-md-12">
-                            <h5>Túi da bò </h5>
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col col-md-3 col-sm-6 list-items">
-                <div class="product-wrapper d-flex flex-column">
-                    <div class="product-thumbnail">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p3/1_result.png" class="img-fluid" alt="">
-                            <div class="row quickacess">
-                                <div class="col-12">
-                                    <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="col-md-12">
-                            <h5>Túi da cá sấu</h5>
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <div class="col col-md-3 col-sm-6 list-items">
-                <div class="product-wrapper d-flex flex-column">
-                    <div class="product-thumbnail">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p4/1_result.png" class="img-fluid" alt="">
-                            <div class="row quickacess">
-                                <div class="col-12">
-                                    <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="col-md-12">
-                            <h5>Túi da cá sấu</h5>
-                            <div class="row">
-                                <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row list">
-            <div class="col col-md-3 col-sm-6 list-items">
-                <div class="product-wrapper d-flex flex-column">
-                    <div class="product-thumbnail ">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p1/1_result.png" class="img-fluid" alt="">
-                            <div class="row quickacess">
-                                <div class="col-12">
-                                    <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -393,12 +236,10 @@
                                 <h5>Túi da cá sấu</h5>
                                 <div class="row">
                                     <div class="col-md-10">
-                                        <p>
-                                            <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                        </p>
+                                        <p><span class="text-danger">399.000₫</span> <del>688.000₫</del></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                        <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -406,20 +247,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
                     <div class="product-thumbnail">
-                        <div class="row img ">
+                        <div class="row img">
                             <img src="./assets/img/productimg/p2/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -427,36 +264,29 @@
                     </div>
                     <div class="product-info">
                         <div class="col-md-12">
-                            <h5>Túi da bò </h5>
+                            <h5>Túi da bò</h5>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
+                                    <p><span class="text-danger">499.000₫</span> <del>788.000₫</del></p>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
                     <div class="product-thumbnail">
-                        <div class="row img ">
+                        <div class="row img">
                             <img src="./assets/img/productimg/p3/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -464,36 +294,29 @@
                     </div>
                     <div class="product-info">
                         <div class="col-md-12">
-                            <h5>Túi da cá sấu</h5>
+                            <h5>Túi da cá sấu châu Phi</h5>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
+                                    <p><span class="text-danger">599.000₫</span> <del>1.088.000₫</del></p>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
                     <div class="product-thumbnail">
-                        <div class="row img ">
+                        <div class="row img">
                             <img src="./assets/img/productimg/p4/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -501,38 +324,32 @@
                     </div>
                     <div class="product-info">
                         <div class="col-md-12">
-                            <h5>Túi da cá sấu</h5>
+                            <h5>Túi xách tay thời thượng</h5>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
+                                    <p><span class="text-danger">399.000₫</span> <del>588.000₫</del></p>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row list">
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
-                    <div class="product-thumbnail ">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p1/1_result.png" class="img-fluid" alt="">
+                    <div class="product-thumbnail">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p5/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -541,15 +358,13 @@
                     <div class="product-info">
                         <div class="row">
                             <div class="col-md-12">
-                                <h5>Túi da cá sấu</h5>
+                                <h5>Túi xách YSL 99%</h5>
                                 <div class="row">
                                     <div class="col-md-10">
-                                        <p>
-                                            <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                        </p>
+                                        <p><span class="text-danger">299.000₫</span> <del>588.000₫</del></p>
                                     </div>
                                     <div class="col-md-2">
-                                        <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                        <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -557,20 +372,16 @@
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
                     <div class="product-thumbnail">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p2/1_result.png" class="img-fluid" alt="">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p6/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -578,36 +389,29 @@
                     </div>
                     <div class="product-info">
                         <div class="col-md-12">
-                            <h5>Túi da bò </h5>
+                            <h5>Túi GUCCCI</h5>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
+                                    <p><span class="text-danger">599.000₫</span> <del>988.000₫</del></p>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
                     <div class="product-thumbnail">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p3/1_result.png" class="img-fluid" alt="">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p7/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -615,36 +419,29 @@
                     </div>
                     <div class="product-info">
                         <div class="col-md-12">
-                            <h5>Túi da cá sấu</h5>
+                            <h5>Túi cầm tay nhỏ gọn</h5>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
+                                    <p><span class="text-danger">400.000₫</span> <del>600.000₫</del></p>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
-            <div class="col col-md-3 col-sm-6 list-items">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
                 <div class="product-wrapper d-flex flex-column">
                     <div class="product-thumbnail">
-                        <div class="row img ">
-                            <img src="./assets/img/productimg/p4/1_result.png" class="img-fluid" alt="">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p8/1_result.png" class="img-fluid" alt="">
                             <div class="row quickacess">
                                 <div class="col-12">
                                     <div class="d-flex w-100">
-                                        <div class="quickview flex-fill w-50" >
-                                            Xem nhanh
-                                        </div>
-                                        <div class="viewall flex-fill w-50">
-                                            Xem chi tiết
-                                        </div>
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
                                     </div>
                                 </div>
                             </div>
@@ -652,23 +449,153 @@
                     </div>
                     <div class="product-info">
                         <div class="col-md-12">
-                            <h5>Túi da cá sấu</h5>
+                            <h5>Túi CELINE</h5>
                             <div class="row">
                                 <div class="col-md-10">
-                                    <p>
-                                        <span class="text-danger">299.000₫</span> <del>588.000₫</del>
-                                    </p>
+                                    <p><span class="text-danger">899.000₫</span> <del>1.588.000₫</del></p>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn rounded-pill cartbtn"> <i class="fas fa-shopping-cart"></i></button>
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="row list">
+            <div class="col-md-3 col-sm-6 col-12 list-items">
+                <div class="product-wrapper d-flex flex-column">
+                    <div class="product-thumbnail">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p9/1_result.png" class="img-fluid" alt="">
+                            <div class="row quickacess">
+                                <div class="col-12">
+                                    <div class="d-flex w-100">
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h5>Túi GUCCI like new</h5>
+                                <div class="row">
+                                    <div class="col-md-10">
+                                        <p><span class="text-danger">999.000₫</span> <del>1.000.000₫</del></p>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 list-items">
+                <div class="product-wrapper d-flex flex-column">
+                    <div class="product-thumbnail">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p10/1_result.png" class="img-fluid" alt="">
+                            <div class="row quickacess">
+                                <div class="col-12">
+                                    <div class="d-flex w-100">
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="col-md-12">
+                            <h5>Túi da bò YSL</h5>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p><span class="text-danger">899.000₫</span> <del>901.000₫</del></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 list-items">
+                <div class="product-wrapper d-flex flex-column">
+                    <div class="product-thumbnail">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p11/1_result.png" class="img-fluid" alt="">
+                            <div class="row quickacess">
+                                <div class="col-12">
+                                    <div class="d-flex w-100">
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="col-md-12">
+                            <h5>Túi da cá sấu CELINE</h5>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p><span class="text-danger">1.299.000₫</span> <del>1.588.000₫</del></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 list-items">
+                <div class="product-wrapper d-flex flex-column">
+                    <div class="product-thumbnail">
+                        <div class="row img">
+                            <img src="./assets/img/productimg/p12/1_result.png" class="img-fluid" alt="">
+                            <div class="row quickacess">
+                                <div class="col-12">
+                                    <div class="d-flex w-100">
+                                        <div class="quickview flex-fill w-50">Xem nhanh</div>
+                                        <div class="viewall flex-fill w-50">Xem chi tiết</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="col-md-12">
+                            <h5>Túi da phong cách genz</h5>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <p><span class="text-danger">199.000₫</span> <del>288.000₫</del></p>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn rounded-pill cartbtn"><i class="fas fa-shopping-cart"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center my-3">
+            <div class="col-auto">
+                <a href="#">
+                    <button class="btn btn-warning rounded btn-outline-danger">Xem tất cả sản phẩm <i class="fas fa-arrow-right"></i></button>
+                </a>
+            </div>
+        </div>
+
     </div>
 </div>
 <!--product list-->
@@ -717,80 +644,82 @@
 </div>
 <!--feed back-->
 </div>
+<!--login and register-->
 <div class="wrapper">
     <div class="wrapper-dialog">
-    <span class="icon-close"><img src="./assets/img/icon/close.svg" alt="icon-close"></span>
-    <div class="form-box login">
-        <h2>Đăng nhập</h2>
-        <form action="#" name="nameLogin" id="login">
-            <div class="input-box">
-               
-                <input type="email" id="emailLogin" name="email" autocomplete="off" required>
-                <label for="email">Email</label>
-            </div>
-            <div class="input-box">
-                
-                <input type="password" id="passwordLogin" name="password" autocomplete="off" required>
-                <label for="password">Mật khẩu</label>
-            </div>
-            <div class="remember-forgot">
-                <label for="remember-forgot"><input type="checkbox" id="remember-forgot" name="remember-forgot"
-                        autocomplete="off">Ghi nhớ </label>
-                <a href="#">Bạn quên mật khẩu?</a>
-            </div>
-            <button class="btn" onclick="loginUser()">Đăng nhập</button>
-            <div class="login-register">
-                <p>Bạn chưa có tài khoản <a href="#" class="register-link">Đăng ký ngay</a></p>
-            </div>
-        </form>
-    </div>
+        <span class="icon-close"><img src="./assets/img/icon/close.svg" alt="icon-close"></span>
+        <div class="form-box login">
+            <h2>Đăng nhập</h2>
+            <form action="#" name="nameLogin" id="login">
+                <div class="input-box">
 
-    <div class="form-box register" >
-        <h2>Đăng ký</h2>
-        <form name="nameRegister" id="register">
-            <div class="input-box">
-                
-                <input type="text" id="fullName" name="fullName" autocomplete="off" required>
-                <label for="fullName">Họ và tên</label>
-            </div>
-            <div class="input-box">
-                
-                <input type="email" id="email" name="email" autocomplete="off" required>
-                <label for="email">Email</label>
-            </div>
-            <div class="input-box">
-                
-                <input type="password" id="password" name="password" autocomplete="off" required>
-                <label for="password">Mật khẩu</label>
-            </div>
-            <div class="remember-forgot">
-                <label for="term-condition"><input type="checkbox" id="term-condition" name="term-condition"
-                        autocomplete="off">Tôi đồng ý với các chính sách, điều khoản và điều kiện</label>
-            </div>
-            <button class="btn" onclick="registerSubmit()">Đăng ký</button>
-            <div class="login-register">
-                <p>Bạn đã có tài khoản <a href="#" class="login-link">Đăng nhập</a></p>
-            </div>
-        </form>
-    </div>
+                    <input type="email" id="emailLogin" name="email" autocomplete="off" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
 
-    <div class="form-box forgot-password">
-        <h2>Quên mật khẩu</h2>
-        <form action="#">
-            <div class="input-box">
-                <input type="email" id="forgot-email" name="forgot-email" autocomplete="off" required>
-                <label for="forgot-email">Email</label>
-            </div>
-            <button type="submit" class="btn">Gửi mã xác nhận</button>
-            <div class="login-register">
-                <p><a href="#" class="back-to-login">Quay lại Đăng nhập</a></p>
-            </div>
-        </form>
-    </div>
+                    <input type="password" id="passwordLogin" name="password" autocomplete="off" required>
+                    <label for="password">Mật khẩu</label>
+                </div>
+                <div class="remember-forgot">
+                    <label for="remember-forgot"><input type="checkbox" id="remember-forgot" name="remember-forgot"
+                                                        autocomplete="off">Ghi nhớ </label>
+                    <a href="#">Bạn quên mật khẩu?</a>
+                </div>
+                <button class="btn btn-danger rounded" onclick="loginUser()">Đăng nhập</button>
+                <div class="login-register">
+                    <p>Bạn chưa có tài khoản <a href="#" class="register-link">Đăng ký ngay</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box register" >
+            <h2>Đăng ký</h2>
+            <form name="nameRegister" id="register">
+                <div class="input-box">
+
+                    <input type="text" id="fullName" name="fullName" autocomplete="off" required>
+                    <label for="fullName">Họ và tên</label>
+                </div>
+                <div class="input-box">
+
+                    <input type="email" id="email" name="email" autocomplete="off" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-box">
+
+                    <input type="password" id="password" name="password" autocomplete="off" required>
+                    <label for="password">Mật khẩu</label>
+                </div>
+                <div class="remember-forgot">
+                    <label for="term-condition"><input type="checkbox" id="term-condition" name="term-condition"
+                                                       autocomplete="off">Tôi đồng ý với các chính sách, điều khoản và điều kiện</label>
+                </div>
+                <button class="btn btn-danger rounded" onclick="registerSubmit()">Đăng ký</button>
+                <div class="login-register">
+                    <p>Bạn đã có tài khoản <a href="#" class="login-link">Đăng nhập</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="form-box forgot-password">
+            <h2>Quên mật khẩu</h2>
+            <form action="#">
+                <div class="input-box">
+                    <input type="email" id="forgot-email" name="forgot-email" autocomplete="off" required>
+                    <label for="forgot-email">Email</label>
+                </div>
+                <button type="submit" class="btn">Gửi mã xác nhận</button>
+                <div class="login-register">
+                    <p><a href="#" class="back-to-login">Quay lại Đăng nhập</a></p>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+<!--end login and resiter-->
 <!-- footer -->
-    <footer class="footer">
+    <footer id="LienHe" class="footer">
         <div class="container-footer">
             <div class="row">
                 <!-- Policy Section -->
@@ -861,7 +790,7 @@
         </div>
     </footer>
 <!--footer-->
-<button id="scrollToTopBtn" class="btn btn-danger btn-outline-warning rounded-pill" style="position: fixed; bottom: 40px; right: 20px; display: none;">
+<button id="scrollToTopBtn" class="btn btn-danger btn-outline-warning rounded-pill" style="position: fixed; bottom: 100px; right: 20px; display: none;">
     <i class="fas fa-arrow-up"></i>
 </button>
 </body>

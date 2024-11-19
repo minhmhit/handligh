@@ -323,7 +323,7 @@ body{
     color: white;
     background: #162938;
 }
-.navigation .btnLogout{
+.btn-menu{
     width: 130px;
     height: 50px;
     background: transparent;
@@ -337,9 +337,21 @@ body{
     margin-left: 40px;
     transition: .5s;
 }
-.navigation .btnLogout:hover{
-    color: white;
+.btn-menu:hover{
+    color: #ccc;
+}
+.dropdown-item:focus{
     background: #162938;
+}
+.fa-user{
+    margin-left: -30px;
+}
+.user-infor{
+    width: 180px;
+    font-size: 17px;
+    align-content: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 .wrapper{
     display: none;
@@ -512,6 +524,9 @@ body{
 }
 .authen{
     display: none;
+}
+.form-message{
+    color: red;
 }
 
 /*!*QUAN-SAN code with no comment. I don't know :333*!*/

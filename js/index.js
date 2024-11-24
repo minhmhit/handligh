@@ -179,8 +179,7 @@ function logout() {
 function registerSubmit() {
     var form = document.getElementById("form-1");
     form.submit();
-    if(!formIsValid(form))
-        return;
+
     var data = getData(form);
     console.log(data);
     if (addUser(data)) {
@@ -409,3 +408,52 @@ function minLength(selector, min, message) {
 };
 //validate
 // end login, register, fotgot password
+
+// cart
+document.addEventListener('DOMContentLoaded', () => {
+  // Xử lý sự kiện khi nhấn nút thêm vào giỏ
+  document.querySelectorAll('.cartbtn').forEach((button, index) => {
+      button.addEventListener('click', (event) => {
+          const productWrapper = event.target.closest('.product-wrapper');
+
+          if (!productWrapper) {
+              console.error("Không tìm thấy sản phẩm.");
+              return;
+          }
+
+          // Lấy thông tin sản phẩm
+          const productKey = productWrapper.getAttribute('data-key') || `product-${index + 1}`;
+          const productName = productWrapper.querySelector('h5').innerText;
+          const productPrice = productWrapper.querySelector('.text-danger').innerText;
+          const productImage = productWrapper.querySelector('img').src;
+
+          // Cấu trúc sản phẩm để thêm vào giỏ hàng
+          const cartItem = {
+              key: productKey,
+              name: productName,
+              price: productPrice,
+              image: productImage,
+              quantity: 1
+          };
+
+          // Thêm vào localStorage
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          const existingItemIndex = cart.findIndex(item => item.key === productKey);
+
+          if (existingItemIndex > -1) {
+              cart[existingItemIndex].quantity += 1; // Tăng số lượng nếu đã có trong giỏ
+          } else {
+              cart.push(cartItem); // Thêm sản phẩm mới
+          }
+
+          localStorage.setItem('cart', JSON.stringify(cart));
+
+          // Hiển thị thông báo
+          showNotification(productName);
+
+          // Cập nhật số lượng sản phẩm trong biểu tượng giỏ hàng
+          updateCartCount();
+      });
+  });
+});
+//end cart

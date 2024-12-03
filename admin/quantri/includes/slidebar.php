@@ -48,6 +48,7 @@
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="./thongKeN.php">Doanh thu theo ngày</a>
+            <a class="collapse-item" href="./thongke.php">Bảng doanh thu</a>
             <a class="collapse-item" href="./thongkeT.php">Doanh thu theo tháng </a>
         </div>
     </div>

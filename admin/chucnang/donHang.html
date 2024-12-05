@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý đơn hàng</title>
+    <link href="../quantri/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../quantri/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/donHang.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Quản Lý Handligh</div>
+            </a>
+            <!-- ...existing code... -->
+            <!-- Nav Item - Orders -->
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Tổng quan</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Products -->
+            <li class="nav-item ">
+                <a class="nav-link" href="sanPham.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Quản lý sản phẩm</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Orders -->
+            <li class="nav-item  active">
+                <a class="nav-link" href="donHang.html">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Quản lý đơn hàng</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Users -->
+            <li class="nav-item">
+                <a class="nav-link" href="nguoiDung.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Quản lý người dùng</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="doanhThu.html">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Quản lý doanh thu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="logoutBtn">
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </li>
+            <!-- ...existing code... -->
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" 
+                                   placeholder="Tìm kiếm theo tên, mã, sản phẩm..." 
+                                   id="searchOrder"
+                                   aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <img class="img-profile rounded-circle" src="../../assets/img/khanh.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Quản lý đơn hàng</h1>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addOrderModal">
+                            <i class="fas fa-plus"></i> Thêm đơn hàng
+                        </button>
+                    </div>
+
+                    <!-- Orders Table -->
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Khách hàng</th>
+                                            <th>Sản phẩm</th>
+                                            <th>Số lượng</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Trạng thái</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="orderTableBody">
+                                        <!-- Orders will be loaded here by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="d-flex justify-content-center mt-4">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination" id="pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Page Content -->
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- View Order Modal -->
+    <div class="modal fade" id="viewOrderModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chi tiết đơn hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="order-info">
+                        <div class="form-group">
+                            <label><strong>Mã đơn hàng:</strong></label>
+                            <p id="viewOrderId" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Khách hàng:</strong></label>
+                            <p id="viewOrderCustomer" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Sản phẩm:</strong></label>
+                            <p id="viewOrderProduct" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Số lượng:</strong></label>
+                            <p id="viewOrderQuantity" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Tổng tiền:</strong></label>
+                            <p id="viewOrderTotal" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Trạng thái:</strong></label>
+                            <p id="viewOrderStatus" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Ngày đặt hàng:</strong></label>
+                            <p id="viewOrderDate" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Số điện thoại:</strong></label>
+                            <p id="viewOrderPhone" class="ml-2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label><strong>Địa chỉ giao hàng:</strong></label>
+                            <p id="viewOrderAddress" class="ml-2"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Order Modal -->
+    <div class="modal fade" id="editOrderModal" tabindex="-1" role="dialog" aria-labelledby="editOrderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sửa thông tin đơn hàng</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="editOrderForm">
+                        <input type="hidden" id="editOrderId">
+                        <div class="form-group">
+                            <label>Khách hàng</label>
+                            <input type="text" class="form-control" id="editOrderCustomer" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Sản phẩm</label>
+                            <input type="text" class="form-control" id="editOrderProduct" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng</label>
+                            <input type="number" class="form-control" id="editOrderQuantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng tiền</label>
+                            <input type="text" class="form-control" id="editOrderTotal" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Trạng thái</label>
+                            <select class="form-control" id="editOrderStatus">
+                                <option value="Đang xử lý">Đang xử lý</option>
+                                <option value="Chờ xác nhận">Chờ xác nhận</option>
+                                <option value="Đã giao">Đã giao</option>
+                                <option value="Đang giao">Đang giao</option>
+                                <option value="Đã hủy">Đã hủy</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="text" class="form-control" id="editOrderPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ giao hàng</label>
+                            <textarea class="form-control" id="editOrderAddress" rows="3" required></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="saveEditOrderButton">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Order Modal - Similar structure to Add Modal -->
+    <div class="modal fade" id="editOrderModal" tabindex="-1" role="dialog">
+        <!-- Similar content as add modal but with pre-filled values -->
+    </div>
+
+    <!-- Add Order Modal -->
+    <div class="modal fade" id="addOrderModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thêm đơn hàng mới</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="addOrderForm">
+                        <div class="form-group">
+                            <label>Tên khách hàng</label>
+                            <input type="text" class="form-control" id="addOrderCustomer" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="text" class="form-control" id="addOrderPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Địa chỉ giao hàng</label>
+                            <textarea class="form-control" id="addOrderAddress" rows="3" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Sản phẩm</label>
+                            <input type="text" class="form-control" id="addOrderProduct" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng</label>
+                            <input type="number" class="form-control" id="addOrderQuantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Tổng tiền</label>
+                            <input type="text" class="form-control" id="addOrderTotal" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Trạng thái</label>
+                            <select class="form-control" id="addOrderStatus">
+                                <option value="Đang xử lý">Đang xử lý</option>
+                                <option value="Chờ xác nhận">Chờ xác nhận</option>
+                                <option value="Đã giao">Đã giao</option>
+                                <option value="Đang giao">Đang giao</option>
+                                <option value="Đã hủy">Đã hủy</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="saveNewOrderButton">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include your existing JS files -->
+    <script src="../quantri/vendor/jquery/jquery.min.js"></script>
+    <script src="../quantri/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../quantri/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../quantri/js/sb-admin-2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/donHang.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.product-img {
+    max-width: 100px;
+    height: auto;
+}
+.action-buttons button {
+    margin: 0 5px;
+}

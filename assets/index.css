@@ -28,10 +28,13 @@ body{
     font-size: 17px;
     transition: color 0.3s, transform 0.3s;
 }
-.nav-link .home {
+.nav-link >.home {
     color: #ffc107;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.nav-item a{
+    color:#ffffff;
 }
 .menu {
     background-color: #AF1713;
@@ -206,6 +209,28 @@ body{
 }
 
 /*end product*/
+
+/* Custommer rating */
+
+.testimonial-header {
+    display: flex; 
+    align-items: center;
+    height: 300px;
+}
+
+.avatar,
+.info {
+    flex: 1; 
+    text-align: center;
+}
+
+.avatar img {
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+   
+}
+
 
 /*start ft*/
 .policy-item {
@@ -547,3 +572,102 @@ body{
 
 /*!*QUAN-SAN code with no comment. I don't know :333*!*/
 /* end QUAN-SAN*/
+
+/* Search */
+
+@keyframes topdown{
+	0% {transform: translateY(-800px)}
+	70% {transform: translateY(0)}
+}
+#searchSection .container {
+    max-width: 70%;
+}
+#searchSection{
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 10;
+	height: 100vh;
+	width: 100vw;
+	overflow-x: auto;
+	background-color: #fff;
+	display: none;
+	animation: topdown 1s;
+}
+#searchSection .close{
+    position: absolute;
+	top: 30px;
+	right: 140px;
+	font-size: 15pt;
+
+	cursor: pointer;
+    
+}
+#searchSection .searchBox{
+    height: 50px;
+	width: 100%;
+	margin: 20px auto;
+	padding: 10px;
+	background-color: rgb(245, 239, 239);
+}
+#searchSection .searchBox input{
+    height: 100%;
+	width: 100%;
+	font-size: 13pt;
+	outline: none;
+    border: none;
+    background-color: rgb(245, 239, 239);
+}
+#searchSection #searchAdvance{
+    font-size: 14pt;
+    align-items: center;
+    flex-direction: column;
+}
+#searchSection .active{
+    display: flex !important;
+}
+#searchSection #searchAdvance div:first-child{
+    width: auto;
+}
+#searchSection #searchAdvance div:last-child{
+    width: auto;
+}
+#searchSection #searchAdvance div input{
+    width: 100px;
+    padding: 5px;
+    font-size: 12pt;
+    margin-top: 5px;
+}
+#searchSection #searchAdvance div select{
+    vertical-align: top;
+	padding: 10px 5px;
+	font-size: 12pt;
+	text-align: center;
+	outline: none;
+	border: 1px solid #000;
+}
+#searchSection #searchResult{
+	width: 100%;
+}
+#searchSection .row {
+    margin: 0;
+    --bs-gutter-x: 0.5rem;
+}
+#searchSection .product-thumbnail {
+    height: 40%;
+}
+#searchSection p {
+    margin-top: 1rem;
+}
+ .truncate-text {
+    white-space: nowrap; /* Đảm bảo văn bản nằm trên một dòng */
+    overflow: hidden;    /* Ẩn phần nội dung bị tràn */
+    text-overflow: ellipsis; /* Hiển thị dấu "..." nếu văn bản dài hơn */
+}
+#searchSection .product-wrapper {
+    height: auto;
+    padding: 5px;
+}
+#searchSection .cartbtn {
+    margin-bottom: 0;
+}

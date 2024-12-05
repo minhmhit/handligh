@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/index.css">
+    <script src="../vendor/js/bootstrap.min.js" defer></script>
+    <script src="./js/index.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        
+    
+    
+    <link rel="stylesheet" href="./checkout.css">
+    <script src="./checkout.js" defer></script>
+    <title>Thanh toán</title>
+</head>
+<body>
+    
+    <!--    start header-->
+    <div class="row navigation">
+        <div class="col-md-3 col-12">
+            <nav class="navbar bg-body-tertiary">
+                <div class="container-fluid">
+                    <form class="d-flex" role="search">
+                        <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm túi xách..."
+                            aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </nav>
+        </div>
+        <div class="col-md-6 col-12">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav mx-auto">
+                            <li class="nav-item">
+                                <a class="nav-link me-5 home active" aria-current="page" href="../index.html">Trang Chủ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-5" href="#GioiThieu">Giới Thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-5" href="#Product">Sản Phẩm</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link me-5" href="../cart/cart.html">Giỏ hàng <i class="fa fa-cart-shopping"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#LienHe">Liên Hệ</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        
+    </div>
+    <!--end header-->
+    
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-7">
+                <h2 class="mb-4">Thông Tin Giao Hàng</h2>
+                <form id="shipping-form">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName" class="form-label">Họ</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="lastName" class="form-label">Tên</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">Số Điện Thoại</label>
+                        <input type="tel" class="form-control" id="phone" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Địa Chỉ Giao Hàng</label>
+                        <textarea class="form-control" id="address" rows="3" required></textarea>
+                    </div>
+
+                    <h3 class="mt-4 mb-3">Phương Thức Thanh Toán</h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card payment-method-card" data-method="cash">
+                                <div class="card-body text-center">
+                                    <input type="radio" name="paymentMethod" value="cash" id="cash-method" class="d-none" required>
+                                    <label for="cash-method">
+                                        <i class="fas fa-money-bill-wave fa-3x"></i>
+                                        <p class="mt-2">Thanh Toán Tiền Mặt</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card payment-method-card" data-method="credit">
+                                <div class="card-body text-center">
+                                    <input type="radio" name="paymentMethod" value="credit" id="credit-method" class="d-none" required>
+                                    <label for="credit-method">
+                                        <i class="fas fa-credit-card fa-3x"></i>
+                                        <p class="mt-2">Thẻ Tín Dụng</p>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="credit-card-details" class="mt-3">
+                        <div class="mb-3">
+                            <label for="cardName" class="form-label">Tên Chủ Thẻ</label>
+                            <input type="text" class="form-control" id="cardName">
+                        </div>
+                        <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Số Thẻ</label>
+                            <input type="text" class="form-control" id="cardNumber">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="cardExpiry" class="form-label">Ngày Hết Hạn</label>
+                                <input type="text" class="form-control" id="cardExpiry" placeholder="MM/YY">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cardCVV" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cardCVV">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card order-summary-card">
+                    <div class="card-header">
+                        <h3>Thông Tin Đơn Hàng</h3>
+                    </div>
+                    <div class="card-body" id="order-summary-container">
+                        <!-- Order summary will be dynamically populated here -->
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Tổng Tiền:</span>
+                            <strong id="total-price">0 VND</strong>
+                        </div>
+                        <button id="confirm-order" class="btn btn-primary w-100">Xác Nhận Thanh Toán</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="modal fade" id="orderConfirmationModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Xác Nhận Đơn Hàng</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="order-confirmation-details">
+                    <!-- Order confirmation details will be dynamically populated here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="final-confirm-order">Xác Nhận</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

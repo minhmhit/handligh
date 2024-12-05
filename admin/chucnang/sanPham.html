@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link href="../quantri/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../quantri/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/sanPham.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Quản Lý Handligh</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Tổng quan</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Products -->
+            <li class="nav-item active">
+                <a class="nav-link" href="sanPham.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Quản lý sản phẩm</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Orders -->
+            <li class="nav-item">
+                <a class="nav-link" href="donHang.html">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Quản lý đơn hàng</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Users -->
+            <li class="nav-item">
+                <a class="nav-link" href="nguoiDung.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Quản lý người dùng</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="doanhThu.html">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Quản lý doanh thu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="logoutBtn">
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm...">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <img class="img-profile rounded-circle" src="../../assets/img/khanh.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Quản lý sản phẩm</h1>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#addProductModal">
+                            <i class="fas fa-plus"></i> Thêm sản phẩm
+                        </button>
+                    </div>
+
+                    <!-- Search and Filter -->
+                    <div class="row mb-4">
+                        <div class="col-md-6">
+                            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" id="categoryFilter">
+                                <option value="">Tất cả loại</option>
+                                <option value="tui-xach">Túi xách</option>
+                                <option value="balo">Balo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Products Table -->
+                    <div class="card shadow mb-4">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered text-center align-middle" id="productsTable">
+                                    <thead>
+                                        <tr class="text-center">
+                                            <th class="text-center align-middle">Mã SP</th>
+                                            <th class="text-center align-middle">Hình ảnh</th>
+                                            <th class="text-center align-middle">Tên sản phẩm</th>
+                                            <th class="text-center align-middle">Giá</th>
+                                            <th class="text-center align-middle">Số lượng</th>
+                                            <th class="text-center align-middle">Loại</th>
+                                            <th class="text-center align-middle">Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="productsList" class="text-center">
+                                        <!-- Products will be loaded here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Pagination -->
+                            <div class="d-flex justify-content-center mt-4">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination" id="pagination"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Page Content -->
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Add Product Modal -->
+    <div class="modal fade" id="addProductModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thêm sản phẩm mới</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="addProductForm">
+                        <div class="form-group">
+                            <label>Tên sản phẩm</label>
+                            <input type="text" class="form-control" name="tenSanPham" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Giá</label>
+                            <input type="number" class="form-control" name="gia" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng</label>
+                            <input type="number" class="form-control" name="soLuong" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại</label>
+                            <select class="form-control" name="loaiSanPham" required>
+                                <option value="tui-xach">Túi xách</option>
+                                <option value="balo">Balo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Hình ảnh</label>
+                            <input type="file" class="form-control-file" name="hinhAnh" id="addProductImage" required>
+                            <div class="mt-2">
+                                <img id="addImagePreview" class="img-fluid" style="max-height: 200px; max-width: 200px; display: none;">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" onclick="addProduct()">Thêm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Product Modal -->
+    <div class="modal fade" id="editProductModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Sửa thông tin sản phẩm</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form id="editProductForm">
+                        <input type="hidden" id="editProductId">
+                        <div class="form-group">
+                            <label>Mã sản phẩm</label>
+                            <input type="text" class="form-control" id="editProductCode" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label>Tên sản phẩm</label>
+                            <input type="text" class="form-control" id="editProductName" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Giá</label>
+                            <input type="number" class="form-control" id="editProductPrice" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Số lượng</label>
+                            <input type="number" class="form-control" id="editProductQuantity" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Loại</label>
+                            <select class="form-control" id="editProductCategory">
+                                <option value="tui-xach">Túi xách</option>
+                                <option value="balo">Balo</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Hình ảnh hiện tại</label>
+                            <div class="mb-2">
+                                <img id="currentImagePreview" class="img-fluid" style="max-height: 200px; max-width: 200px;">
+                            </div>
+                            <input type="file" class="form-control-file" id="editProductImage">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-primary" id="saveEditButton">Lưu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../quantri/vendor/jquery/jquery.min.js"></script>
+    <script src="../quantri/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../quantri/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../quantri/js/sb-admin-2.min.js"></script>
+    <script src="../js/sanPham.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/logout.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+}
+
+/*header*/
+.top-buttons .btn {
+    background-color: #c0392b;
+    color: #fff;
+    border-radius: 5px;
+    margin: 0 5px;
+}
+
+.icon-section i {
+    font-size: 24px;
+    color: #333;
+}
+
+.navigation {
+    background-color: #AF1713;
+}
+
+.nav-link {
+    color: rgb(1, 1, 1);
+    font-weight: bold;
+    font-size: 17px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.nav-link>.home {
+    color: #ffc107;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nav-item a {
+    color: #ffffff;
+}
+
+.menu {
+    background-color: #AF1713;
+}
+
+.nav-link:hover {
+    color: #ffc107;
+    transform: scale(1.1);
+}
+
+.policy-item {
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-item i {
+    font-size: 48px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.policy-item h4 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.policy-item p {
+    font-size: 14px;
+}
+
+
+.policy-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.policy-item:hover i {
+    transform: scale(1.2);
+}
+
+
+.policy-item i,
+.policy-item h4,
+.policy-item p {
+    display: block;
+    margin: 0 auto;
+}
+
+.service {
+    height: 20vh;
+    width: 100%;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 40px 0;
+    color: #333;
+
+}
+
+.footer h6 {
+    color: #c0392b;
+    font-weight: bold;
+}
+
+.footer a {
+    color: #333;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+.social-icons i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #c0392b;
+}
+
+.social-icons i:hover {
+    color: #555;
+}
+
+.newsletter input[type="email"] {
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.newsletter button {
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.newsletter button i {
+    margin-right: 5px;
+}
+
+.bottom-text {
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+}
+
+.container-footer {
+    margin: 0 80px;
+}
+
+/* end-ft */
+.col-left-ac .block-account .title-account {
+    font-size: 19px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 7px;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.col-left-ac .block-account p {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 28px;
+    color: #000;
+    position: relative;
+}
+
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.nav-item.dropdown.authen {
+    display: block;
+}

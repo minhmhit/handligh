@@ -1,0 +1,15 @@
+.bg-login-image {
+    background: url('../img/f1.png');
+    background-position: center;
+    background-size: cover;
+}
+.form-control-user {
+    border-radius: 20px;
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
+}
+.btn-user {
+    border-radius: 20px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+}

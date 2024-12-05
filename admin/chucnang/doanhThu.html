@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý doanh thu</title>
+    <link href="../quantri/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <link href="../quantri/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../css/doanhThu.css" rel="stylesheet">
+</head>
+<body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="../index.html">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Quản Lý Handligh</div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Nav Items -->
+            <li class="nav-item">
+                <a class="nav-link" href="../index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Tổng quan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sanPham.html">
+                    <i class="fas fa-fw fa-box"></i>
+                    <span>Quản lý sản phẩm</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="donHang.html">
+                    <i class="fas fa-fw fa-shopping-cart"></i>
+                    <span>Quản lý đơn hàng</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="nguoiDung.html">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Quản lý người dùng</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="doanhThu.html">
+                    <i class="fas fa-fw fa-chart-line"></i>
+                    <span>Quản lý doanh thu</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="logoutBtn">
+                    <i class="fas fa-fw fa-sign-out-alt"></i>
+                    <span>Đăng xuất</span>
+                </a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Tìm kiếm...">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <img class="img-profile rounded-circle" src="../../assets/img/khanh.jpg">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h1 class="h3 mb-0 text-gray-800">Quản lý doanh thu</h1>
+                        <div>
+                            <button class="btn btn-success" id="exportExcel">
+                                <i class="fas fa-file-excel mr-1"></i> Xuất Excel
+                            </button>
+                            <button class="btn btn-danger" id="exportPDF">
+                                <i class="fas fa-file-pdf mr-1"></i> Xuất PDF
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Overview Cards -->
+                    <div class="row">
+                        <!-- Total Revenue Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tổng doanh thu</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800">350,000,000đ</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Monthly Revenue Card -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Doanh thu tháng này</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800" id="currentMonthRevenue">0đ</div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Date Range Filter Card -->
+                        <div class="col-xl-6 col-md-12 mb-4">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                                Doanh thu từ ngày:                      
+                                            </div>
+                                            <div class="row align-items-center">
+                                                <div class="col-md-5">
+                                                    <input type="date" class="form-control form-control-sm" id="startDateRange">
+                                                </div>
+                                                <div class="col-md-5">
+                                                    <input type="date" class="form-control form-control-sm" id="endDateRange">
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button class="btn btn-info btn-sm w-100" id="applyDateRangeFilter">
+                                                        <i class="fas fa-filter"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Revenue Table Card -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                            <h6 class="m-0 font-weight-bold text-primary">Chi tiết doanh thu</h6>
+                            <div class="d-flex align-items-center">
+                                <label class="mr-2">Lọc theo:</label>
+                                
+                                
+                                <!-- Date range filter -->
+                          
+                                <!-- Existing filters -->
+                                <div id="dateFilter" style="display: none;" class="d-flex align-items-center">
+                                    <select class="custom-select custom-select-sm mr-2" id="yearSelect" style="width: 100px;">
+                                        <option selected disabled>Chọn năm</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                    </select>
+                                    <select class="custom-select custom-select-sm mr-2" id="monthSelect" style="width: 120px;" disabled>
+                                        <option selected disabled>Chọn tháng</option>
+                                        <option value="0">Tháng 1</option>
+                                        <option value="1">Tháng 2</option>
+                                        <option value="2">Tháng 3</option>
+                                        <option value="3">Tháng 4</option>
+                                        <option value="4">Tháng 5</option>
+                                        <option value="5">Tháng 6</option>
+                                        <option value="6">Tháng 7</option>
+                                        <option value="7">Tháng 8</option>
+                                        <option value="8">Tháng 9</option>
+                                        <option value="9">Tháng 10</option>
+                                        <option value="10">Tháng 11</option>
+                                        <option value="11">Tháng 12</option>
+                                    </select>
+                                    <button class="btn btn-primary btn-sm" id="applyDateFilter">Áp dụng</button>
+                                </div>
+                                <!-- ...existing custom date range div... -->
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Ngày</th>
+                                            <th>Doanh thu</th>
+                                            <th>Thao tác</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="revenueTableBody">
+                                        <!-- Data will be loaded dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Pagination -->
+                            <div class="d-flex justify-content-center mt-3">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination" id="pagination">
+                                        <!-- Pagination will be added dynamically -->
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Page Content -->
+            </div>
+            <!-- End of Main Content -->
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Edit Revenue Modal - Similar structure to Add Modal -->
+    <div class="modal fade" id="editRevenueModal" tabindex="-1" role="dialog">
+        <!-- Similar content as add modal but with pre-filled values -->
+    </div>
+
+    <!-- Include your existing JS files -->
+    <script src="../quantri/vendor/jquery/jquery.min.js"></script>
+    <script src="../quantri/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../quantri/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../quantri/js/sb-admin-2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/doanhThu.js"></script>
+    <script src="../js/logout.js"></script>
+</body>
+</html>

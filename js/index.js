@@ -424,3 +424,51 @@ function minLength(selector, min, message) {
 };
 //validate
 // end login, register, fotgot password
+// Search //
+function showSearch(){
+
+	document.getElementById('searchSection').style.display = 'block';
+}
+function closeSearch(){
+
+	document.getElementById('searchSection').style.display = 'none';
+}
+function search() {
+  const searchInput = document.getElementById('search').value.toLowerCase();
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+  let resultHTML = '';
+
+  if (searchInput.trim() !== '') {
+      // Duyệt qua danh sách sản phẩm
+      products.forEach(product => {
+          if (product.name.toLowerCase().includes(searchInput)) {
+              resultHTML += `
+                <div class="col-md-3 mb-4">
+            <div class="product-wrapper d-flex flex-column">
+                <div class="product-thumbnail">
+                    <img src="${product.images[0]}" class="img-fluid" alt="${product.name}">
+                    <div class="quickaccess d-flex flex-fill w-100">
+                        <a href="product/product.html#product/${product.id}" class="btn btn-primary container-fluid">Xem chi tiết</a>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <p class="truncate-text">${product.name}</p>
+                    <div class="d-flex justify-content-between">
+                        <p class="text-danger">${product.price.toLocaleString()}₫</p>
+                        <button class="btn rounded-pill cartbtn" onclick="addToCart(${product.id})">
+                            <i class="fas fa-shopping-cart"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+              `;
+          }
+      });
+  }
+
+  // Cập nhật giao diện
+  document.getElementById('searchResult').innerHTML = resultHTML 
+      ? resultHTML 
+      : '<p class="text-center">Không tìm thấy sản phẩm phù hợp.</p>';
+}
